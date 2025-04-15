@@ -15,18 +15,20 @@ def q_learning(env, episodes, alpha, gamma, epsilon):
 
     for episode in range(episodes):
         state = env.reset()
-        action = epsilon_greedy_policy(Q, state, epsilon)
         done = False
 
         while not done:
+            action = epsilon_greedy_policy(Q, state, epsilon)
             next_state, reward, done = env.step(action)
-            next_action = epsilon_greedy_policy(Q, next_state, epsilon)
 
-            Q[state] += alpha * (reward + gamma * max(Q[next_state]) - Q[state])
+            best_next_action = np.argmax(Q[next_state[0], next_state[1]])
+            td_target = reward + gamma * Q[next_state[0], next_state[1], best_next_action]
+            td_delta = td_target - Q[state[0], state[1], action]
+
+            Q[state[0], state[1], action] += alpha * td_delta
 
             action_counts[action] += 1
             state = next_state
-            action = next_action
 
     training_time = time.time() - start_time
     return Q, training_time, action_counts

@@ -55,7 +55,7 @@ gamma = 0.9
 epsilon = 0.1
 
 # Latih Algoritma
-Q, waktu, actions = sarsa(env, episodes, alpha, gamma, epsilon)
+Q, waktu, actions = q_learning(env, episodes, alpha, gamma, epsilon)
 
 # Tampilkan hasilS
 print(f"Waktu pelatihan: {waktu:.2f} detik")
