@@ -1,10 +1,11 @@
 from environment import GridWorld
 from sarsa import sarsa
+from q_learning import q_learning
 from utils import generate_direction_map, print_direction_map, save_q_table
 
-# Konfigurasi MAP 4x4
-width = 5
-height = 5
+# Konfigurasi MAP
+width = 4
+height = 4
 start = (0, 0)
 goal = (3, 3)
 obstacles = [(1, 1), (2, 1)]
@@ -17,7 +18,7 @@ alpha = 0.1
 gamma = 0.9
 epsilon = 0.1
 
-# Latih SARSA
+# Latih Algoritma
 Q, waktu, actions = sarsa(env, episodes, alpha, gamma, epsilon)
 
 # Tampilkan hasil
