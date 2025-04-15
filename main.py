@@ -17,35 +17,35 @@ from utils import generate_direction_map, print_direction_map, save_q_table
 # ]
 
 # Bentuk 5 X 5
-# width = 5
-# height = 5
-# start = (0, 0)
-# goal = (4, 4)
-
-# obstacles = [
-#     (4, 0),  
-#     (1, 1),
-#     (4, 1),
-#     (2, 2), 
-#     (0, 3),
-#     (4, 3),
-#     (2, 4)
-# ]
-
-# Bentuk 8 X 8
-width = 8
-height = 8
-start = (0, 1)
-goal = (7, 7)
+width = 5
+height = 5
+start = (0, 0)
+goal = (4, 4)
 
 obstacles = [
-    (3, 2),  
-    (5, 3),
-    (3, 4),
-    (1, 5), (2, 5), (6, 5),
-    (1, 6), (4, 6),(6, 6),
-    (3, 7)
+    (4, 0),  
+    (1, 1),
+    (4, 1),
+    (2, 2), 
+    (0, 3),
+    (4, 3),
+    (2, 4)
 ]
+
+# # Bentuk 8 X 8
+# width = 8
+# height = 8
+# start = (0, 1)
+# goal = (7, 7)
+
+# obstacles = [
+#     (3, 2),  
+#     (5, 3),
+#     (3, 4),
+#     (1, 5), (2, 5), (6, 5),
+#     (1, 6), (4, 6),(6, 6),
+#     (3, 7)
+# ]
 env = GridWorld(width, height, start, goal, obstacles)
 
 # Parameter SARSA
